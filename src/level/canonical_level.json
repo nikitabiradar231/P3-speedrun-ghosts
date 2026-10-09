@@ -1,0 +1,45 @@
+{
+  "$schema": "speedrun-ghosts-level-v1",
+  "name": "Neon Gauntlet Alpha",
+  "version": 1,
+  "unitScale": 1000,
+  "world": {
+    "width": 800000,
+    "height": 500000,
+    "deathY": 500000,
+    "ticksPerSecond": 30,
+    "maxTicks": 600
+  },
+  "player": {
+    "width": 20000,
+    "height": 28000,
+    "moveSpeed": 4000,
+    "jumpVelocity": -11000,
+    "gravity": 700,
+    "maxFallSpeed": 14000
+  },
+  "spawn": {
+    "x": 40000,
+    "y": 372000
+  },
+  "goal": {
+    "x": 720000,
+    "y": 300000,
+    "w": 30000,
+    "h": 50000
+  },
+  "solids": [
+    { "id": "start_floor", "x": 0, "y": 400000, "w": 160000, "h": 100000 },
+    { "id": "plat_1", "x": 180000, "y": 360000, "w": 90000, "h": 20000 },
+    { "id": "plat_2", "x": 300000, "y": 310000, "w": 90000, "h": 20000 },
+    { "id": "plat_3", "x": 420000, "y": 260000, "w": 90000, "h": 20000 },
+    { "id": "obstacle_wall", "x": 530000, "y": 200000, "w": 20000, "h": 120000 },
+    { "id": "plat_4", "x": 570000, "y": 280000, "w": 80000, "h": 20000 },
+    { "id": "goal_island", "x": 670000, "y": 350000, "w": 130000, "h": 150000 }
+  ],
+  "hazards": [
+    { "id": "pit_spikes_1", "x": 160000, "y": 460000, "w": 140000, "h": 40000 },
+    { "id": "pit_spikes_2", "x": 300000, "y": 460000, "w": 370000, "h": 40000 },
+    { "id": "wall_spikes", "x": 530000, "y": 320000, "w": 20000, "h": 30000 }
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "name": "speedrun-ghosts",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "npm run level:check && tsc && vite build",
+    "preview": "vite preview",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "level:generate": "tsx scripts/generate-level.ts",
+    "level:check": "tsx scripts/check-level-sync.ts",
+    "security:check": "tsx scripts/check-no-secrets.ts",
+    "forge:test": "forge test -vvv",
+    "forge:build": "forge build",
+    "test:all": "npm run security:check && npm run level:check && vitest run && forge test"
+  },
+  "dependencies": {
+    "viem": "^2.21.54"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.2",
+    "tsx": "^4.19.2",
+    "typescript": "^5.7.2",
+    "vite": "^6.0.3",
+    "vitest": "^2.1.8"
+  }
+}

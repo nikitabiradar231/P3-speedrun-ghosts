@@ -1,0 +1,31 @@
+# Dependencies
+node_modules/
+.pnpm-store/
+
+# Build and Bundler outputs
+dist/
+build/
+out/
+cache/
+.vite/
+
+# Foundry artifacts
+broadcast/
+cache_forge/
+
+# Environment and secrets
+.env
+.env.local
+.env.*.local
+*.pem
+*.key
+
+# IDE and OS
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Testing coverage and logs
+coverage/
+*.log
