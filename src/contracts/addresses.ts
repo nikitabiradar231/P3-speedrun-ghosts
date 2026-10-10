@@ -1,6 +1,6 @@
 export const CONTRACT_ADDRESSES: Record<number, `0x${string}`> = {
   // Base Sepolia (84532)
-  84532: ((import.meta as any).env?.VITE_CONTRACT_ADDRESS as `0x${string}`) || '0x0000000000000000000000000000000000000000',
+  84532: ((import.meta as any).env?.VITE_CONTRACT_ADDRESS as `0x${string}`) || '0x8cab5172C2C8194a27c9F2C2D1F19aCEb956F416',
   // Local Anvil (31337)
   31337: '0x5FbDB2315678afecb367f032d93F642f64180aa3',
 };

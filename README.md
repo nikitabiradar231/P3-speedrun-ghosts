@@ -1,6 +1,7 @@
 # Speedrun Ghosts: A Leaderboard That Checks Your Run
 
 > **Road to Devcon VIII — Problem 3 Submission**  
+> **Deployed Contract (Base Sepolia):** [`0x8cab5172C2C8194a27c9F2C2D1F19aCEb956F416`](https://sepolia.basescan.org/address/0x8cab5172C2C8194a27c9F2C2D1F19aCEb956F416)  
 > **Target Network:** Base Sepolia Testnet (Chain ID `84532`)  
 > **Repository:** `speedrun-ghosts`
 
@@ -181,27 +182,24 @@ npm run build
 
 ## 8. Base Sepolia Deployment
 
-### Step 1: Configure `.env`
-Copy `.env.example` to `.env` and fill in your deployer key and Base Sepolia RPC:
-```bash
-cp .env.example .env
-```
-```env
-BASE_SEPOLIA_RPC_URL="https://sepolia.base.org"
-PRIVATE_KEY="YOUR_BASE_SEPOLIA_PRIVATE_KEY"
-BASESCAN_API_KEY="YOUR_BASESCAN_API_KEY"
-```
+### Deployed Contract Details
 
-### Step 2: Deploy Contract
+| Parameter | Value |
+|---|---|
+| **Contract Name** | `SpeedrunGhosts` |
+| **Contract Address** | [`0x8cab5172C2C8194a27c9F2C2D1F19aCEb956F416`](https://sepolia.basescan.org/address/0x8cab5172C2C8194a27c9F2C2D1F19aCEb956F416) |
+| **Deployment Tx Hash** | [`0xfc5575c2f52e11c76199a3bf6cd39ab72b125501db4b0284dddcf73a1c34c9f5`](https://sepolia.basescan.org/tx/0xfc5575c2f52e11c76199a3bf6cd39ab72b125501db4b0284dddcf73a1c34c9f5) |
+| **Target Network** | Base Sepolia Testnet |
+| **Chain ID** | `84532` |
+| **Level SHA-256 Hash** | `0x52fdf0a33202b2c18254749ff4abc32c0a27b82a8b7fb9c2e0253afe7410620e` |
+| **Level Version** | `1` |
+
+### Deployment Command
 ```bash
 forge script script/Deploy.s.sol:DeploySpeedrunGhosts \
-  --rpc-url base_sepolia \
-  --broadcast \
-  --verify
+  --rpc-url https://sepolia.base.org \
+  --broadcast
 ```
-
-### Step 3: Configure Frontend Contract Address
-Set `VITE_CONTRACT_ADDRESS="<DEPLOYED_ADDRESS>"` in your `.env` or in [`src/contracts/addresses.ts`](file:///c:/Users/nikita/OneDrive/Desktop/D3/src/contracts/addresses.ts).
 
 ---
 
