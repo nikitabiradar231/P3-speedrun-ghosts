@@ -11,6 +11,7 @@ import {
 import { BASE_SEPOLIA_CONFIG, BASE_SEPOLIA_CHAIN_ID } from './config.ts';
 import { SPEEDRUN_GHOSTS_ABI } from '../contracts/SpeedrunGhostsABI.ts';
 import { getContractAddress } from '../contracts/addresses.ts';
+import { bytesToHex, hexToBytes } from '../utils/hex.ts';
 
 export interface LeaderboardEntry {
   runId: number;
@@ -129,7 +130,7 @@ export class WalletService {
       throw new Error('Speedrun contract address is not configured. Set VITE_CONTRACT_ADDRESS in .env');
     }
 
-    const hexInputs = `0x${Buffer.from(inputs).toString('hex')}` as `0x${string}`;
+    const hexInputs = bytesToHex(inputs);
 
     // Send transaction
     const txHash = await this.walletClient.writeContract({
@@ -204,8 +205,7 @@ export class WalletService {
       });
 
       return records.map((r: any, idx: number) => {
-        const rawHex = r.inputs.startsWith('0x') ? r.inputs.slice(2) : r.inputs;
-        const bytes = new Uint8Array(Buffer.from(rawHex, 'hex'));
+        const bytes = hexToBytes(r.inputs);
         return {
           runId: idx,
           player: r.player,
